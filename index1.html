@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Your School Name</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+    header {
+        background-color: #003580;
+        color: white;
+        padding: 50px 20px;
+        text-align: center;
+        position: relative;
+    }
+    header img.logo {
+        width: 140px;
+        height: 140px;
+        position: absolute;
+        top: 50%;
+        left: 400px;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    header h1 {
+        font-size: 36px;
+    }
+    header p.address {
+        font-size: 16px;
+    }
+    header p.motto {
+        font-size: 18px;
+        font-style: italic;
+        margin-top: 8px;
+    }
+    section {
+        max-width: 1100px;
+        margin: auto;
+        padding: 60px 20px;
+    }
+    h2 {
+        text-align: center;
+        font-size: 32px;
+        color: #003580;
+        margin-bottom: 40px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s forwards;
+    }
+    p {
+        font-size: 18px;
+    }
+    /* Box style for About Section */
+    .about-box {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s forwards;
+    }
+    /* Leader Section */
+    .leader-message {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 60px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s forwards;
+    }
+    .leader-message img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+    .leader-message div {
+        flex: 1;
+    }
+    .leader-message h3 {
+        color: #003580;
+        margin-bottom: 5px;
+    }
+    .leader-message p.role {
+        font-weight: bold;
+        color: #555;
+        margin-bottom: 15px;
+    }
+    /* Animations */
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    /* Alternating layout */
+    .leader-message.reverse {
+        flex-direction: row-reverse;
+    }
+    @media (max-width: 768px) {
+        header img.logo {
+            position: static;
+            transform: none;
+            margin-bottom: 20px;
+        }
+        .leader-message, .leader-message.reverse {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+    .leader-message p {
+    font-size: 18px;        /* slightly bigger font */
+    line-height: 1.8;       /* more spacing between lines */
+    letter-spacing: 0.5px;  /* subtle spacing between letters */
+    margin-bottom: 20px;    /* spacing between paragraphs */
+    color: #444;            /* slightly softer color for reading comfort */
+}
+
+</style>
+</head>
+<body>
+
+<header>
+    <img src="abc.jpg" alt="School Logo" class="logo">
+    <h1>ABC Secondary School</h1>
+    <p class="address">Benighat, Nepal</p>
+    <p class="motto">"Empowering minds, shaping the future"</p>
+</header>
+
+
+<section>
+    <h2>Words From Our Leaders</h2>
+
+    <!-- Principal -->
+    <div class="leader-message">
+        <img src="pr.jpg" alt="Principal Photo">
+        <div>
+            <h3>Dr. John Smith</h3>
+            <p class="role">Principal</p>
+            <p>"Welcome to our school, a place where learning goes beyond textbooks and classrooms. Here, we are committed to providing a holistic education that nurtures intellectual growth, creativity, and strong ethical values. Our dedicated team of educators strives to create an environment where each student feels supported, challenged, and inspired to reach their fullest potential. We believe that education is not just about acquiring knowledge, but also about building character, resilience, and a lifelong love for learning. At our school, every achievement is celebrated, every curiosity encouraged, and every child is guided to become a responsible, compassionate, and confident individual ready to contribute meaningfully to society. Together, we aim to shape future leaders who are not only academically competent but also socially aware and morally grounded."</p>
+        <div class="contact-links">
+    <a href="https://wa.me/977XXXXXXXXX" target="_blank">
+        <img src="whatsapp-icon.png" alt="WhatsApp" class="contact-icon"> WhatsApp
+    </a>
+    <a href="tel:+977XXXXXXXXX">
+        <img src="phone-icon.png" alt="Call" class="contact-icon"> Call
+    </a>
+</div>
+
+        </div>
+
+    </div>
+
+    <!-- Vice Principal -->
+    <div class="leader-message reverse">
+        <img src="cr.jpg" alt="Vice Principal Photo">
+        <div>
+            <h3>Mrs. Emily Johnson</h3>
+            <p class="role">Vice Principal</p>
+            <p>"As Vice Principal, I am honored to be part of a school that prioritizes both academic excellence and personal growth. My role is to ensure that every student receives the guidance and support they need to thrive in a safe and stimulating environment. We focus on fostering creativity, critical thinking, and strong values, helping students navigate challenges with confidence and integrity. Working closely with our teachers and staff, I strive to create programs and opportunities that nurture curiosity, encourage collaboration, and celebrate achievements. Together, we aim to build a community where every student feels empowered to explore their talents, develop leadership skills, and grow into responsible, compassionate individuals ready to make a positive impact in the world."</p>
+        </div>
+    </div>
+
+    <!-- Chairman -->
+    <div class="leader-message">
+        <img src="vp.jpg" alt="Chairman Photo">
+        <div>
+            <h3>Mr. Robert Williams</h3>
+            <p class="role">Chairman</p>
+            <p>"As Chairman, it is my privilege to support a school committed to excellence in education and holistic development. Our vision is to provide an environment where students are inspired to pursue knowledge, embrace creativity, and uphold strong moral principles. We believe in empowering our educators with the resources and encouragement they need to nurture the next generation of thinkers, leaders, and innovators. Education, for us, is a partnership between teachers, students, and the community, aimed at shaping individuals who are not only academically capable but also socially responsible and ethically grounded. It is my hope that every student who walks through our doors leaves with confidence, curiosity, and a sense of purpose to contribute meaningfully to society."</p>
+        </div>
+    </div>
+
+</section>
+
+<footer style="background:#003580; color:white; text-align:center; padding:20px;">
+    <p>&copy; 2025 Your School Name. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

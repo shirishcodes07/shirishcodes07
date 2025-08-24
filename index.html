@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABC Secondary School</title>
+ 
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: blue;
+      color: #222;
+    }
+    header {
+      background-color: #003580;
+      padding: 15px 30px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+    }
+    header h1 {
+      font-size: 40px;
+      font-weight: bold;
+    }
+    header nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: -10px;
+      font-weight: 1000;
+    }
+    .hero {
+      background: url('https://source.unsplash.com/1600x600/?house,rent') no-repeat center center/cover;
+      text-align: center;
+      padding: 80px 20px;
+      color: white;
+    }
+    .hero h2 {
+      font-size: 60px;
+      margin-bottom: 20px;
+      color: white;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+    .hero .cta-button {
+      background-color: #ff6200;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      font-size: 25px;
+      border-radius: 15px;
+      cursor: pointer;
+    }
+    .features {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      padding: 60px 20px;
+      background-color: white;
+    }
+    .feature {
+      max-width: 250px;
+    }
+    .feature img {
+      width: 220px;
+      margin-bottom: 10px;
+    }
+    .feature h3 {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    /* Extra Aspects Section */
+    .aspects {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      padding: 60px 20px;
+      background-color: #f9f9f9;
+    }
+    .aspect {
+      max-width: 250px;
+    }
+    .aspect img {
+      width: 220px;
+      margin-bottom: 15px;
+    }
+    .aspect h3 {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+    .aspect p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* Reviews Section */
+    .reviews-section {
+      padding: 60px 20px;
+      background-color: #fff;
+    }
+    .reviews-section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 40px;
+      color: #003580;
+    }
+    .reviews-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding-bottom: 20px;
+    }
+    .review-card {
+      background-color: #f9f9f9;
+      min-width: 300px;
+      max-width: 300px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      flex-shrink: 0;
+      text-align: center;
+    }
+    .review-card img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      object-fit: cover;
+    }
+    .review-card p {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .review-card .reviewer {
+      font-weight: bold;
+      font-size: 16px;
+      color: #333;
+    }
+
+    footer {
+      background-color: #003580;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    /* Scrollbar styling for reviews */
+    .reviews-container::-webkit-scrollbar {
+      height: 8px;
+    }
+    .reviews-container::-webkit-scrollbar-thumb {
+      background-color: #003580;
+      border-radius: 4px;
+    }
+    .reviews-container::-webkit-scrollbar-track {
+      background-color: #ddd;
+      border-radius: 4px;
+    }
+    /* Logo styling */
+    header img {
+      width: 120px;          
+      height: 120px;
+      border-radius: 80%;    
+      object-fit: cover;     
+      margin-right: -400px;    
+      border: 2px solid white; 
+    }
+.hero {
+  background-image: url('school.jpg'); /* your image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+/* Overlay to reduce opacity */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6); /* darker overlay */
+  z-index: 0;
+}
+.hero * {
+  position: relative;
+  z-index: 1;
+}
+.hero h2, .hero p, .hero .cta-button {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: heroFadeZoom 1.5s forwards;
+}
+
+.hero h2 { animation-delay: 0.3s; }
+.hero p { animation-delay: 0.6s; }
+.hero .cta-button { animation-delay: 0.9s; }
+
+@keyframes heroFadeZoom {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.feature, .aspect {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s forwards;
+}
+
+.feature:nth-child(1), .aspect:nth-child(1) { animation-delay: 0.5s; }
+.feature:nth-child(2), .aspect:nth-child(2) { animation-delay: 0.4s; }
+.feature:nth-child(3), .aspect:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.stats-section div {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: statPop 0.8s forwards;
+}
+
+.stats-section div:nth-child(1) { animation-delay: 0.2s; }
+.stats-section div:nth-child(2) { animation-delay: 0.4s; }
+.stats-section div:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes statPop {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+#gallery-container img {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: galleryFade 0.8s forwards;
+}
+
+#gallery-container img:nth-child(1) { animation-delay: 0.2s; }
+#gallery-container img:nth-child(2) { animation-delay: 0.4s; }
+#gallery-container img:nth-child(3) { animation-delay: 0.6s; }
+#gallery-container img:nth-child(4) { animation-delay: 0.8s; }
+#gallery-container img:nth-child(5) { animation-delay: 1s; }
+
+@keyframes galleryFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+section .events div {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: eventFade 0.8s forwards;
+}
+
+section .events div:nth-child(1) { animation-delay: 0.2s; }
+section .events div:nth-child(2) { animation-delay: 0.4s; }
+section .events div:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes eventFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.review-card {
+  opacity: 0;
+  transform: translateX(50px);
+  animation: reviewFade 0.8s forwards;
+}
+
+.review-card:nth-child(1) { animation-delay: 0.2s; }
+.review-card:nth-child(2) { animation-delay: 0.4s; }
+.review-card:nth-child(3) { animation-delay: 0.6s; }
+.review-card:nth-child(4) { animation-delay: 0.8s; }
+.review-card:nth-child(5) { animation-delay: 1s; }
+
+@keyframes reviewFade {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+    
+     <img src="abc.jpg" alt="School Logo">
+     
+    <div style="text-align: center; background-color: #003080; color: white; padding: 20px;">
+  <h1 style="margin: 0;">ABC Secondary School</h1>
+  <h3 style="margin: 5px 0 0 0; font-size: 16px;">Benighat, Nepal</h3>
+</div>
+   <nav>
+  <ul class="nav-menu">
+    <li class="nav-item">
+      <a href="#">About Us</a>
+      <span class="dropdown-btn">&#9662;</span>
+      <ul class="dropdown-content">
+        <li><a href="index2.html">About Our School</a></li>
+        <li><a href="index1.html">Words from Leaders</a></li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a href="#">Programs</a>
+      <span class="dropdown-btn">&#9662;</span>
+      <ul class="dropdown-content">
+        <li><a href="program1.html">Program 1</a></li>
+        <li><a href="program2.html">Program 2</a></li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a href="#">Academics</a>
+      <span class="dropdown-btn">&#9662;</span>
+      <ul class="dropdown-content">
+        <li><a href="subjects.html">Subjects</a></li>
+        <li><a href="curriculum.html">Curriculum</a></li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a href="#">Admission</a>
+      <span class="dropdown-btn">&#9662;</span>
+      <ul class="dropdown-content">
+        <li><a href="how-to-apply.html">How to Apply</a></li>
+        <li><a href="fee-structure.html">Fee Structure</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<style>
+.nav-menu {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item > a {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  padding: 5px;
+}
+
+.dropdown-btn {
+  cursor: pointer;
+  margin-left: 5px;
+  color: white;
+}
+
+/* Dropdown list hidden by default */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 25px;
+  left: 0;
+  background-color: #f9f9f9;
+  color: #222;
+  padding: 10px;
+  border-radius: 5px;
+  min-width: 180px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.dropdown-content li {
+  list-style: none;
+  padding: 5px 0;
+}
+
+.dropdown-content li a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dropdown-content li a:hover {
+  color: #ff6200;
+}
+
+/* Show dropdown on hover */
+.nav-item:hover .dropdown-content {
+  display: block;
+}
+</style>
+
+  </header>
+
+  <section class="hero">
+    <h2>Shape Your Future With Us</h2>
+    <p>“Empowering minds, shaping the future.”.</p>
+    
+    <button class="cta-button">Explore More</button>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <img src="teacher.jpg"/>
+      <h3>Qualified Teachers</h3>
+      <p>High quality education is provided here by best teachers..</p>
+    </div>
+    <div class="feature">
+      <img src="quality.jpg"/>
+      <h3>Quality Education</h3>
+      <p>Well-structured curriculum that balances academics, arts, and sports..</p>
+    </div>
+    <div class="feature">
+      <img src="bus.jpg"/>
+      <h3>Safe and Supportive Environment</h3>
+      <p>Safe classrooms, playgrounds, and transport..</p>
+    </div>
+  </section>
+
+  <section class="aspects">
+    <div class="aspect">
+      <img src="kid.jpg"/>
+      <h3>Extracurricular Activities</h3>
+      <p>Sports, music, art, drama, and clubs.
+
+Opportunities for community service and social responsibility..</p>
+    </div>
+    <div class="aspect">
+      <img src="parent.jpg"/>
+      <h3>Parental Involvement</h3>
+      <p>Open communication with parents..</p>
+    </div>
+    <div class="aspect">
+      <img src="hw.jpg"/>
+      <h3> Assessment and Improvement</h3>
+      <p>Regular evaluations to track academic progress.</p>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+<section class="stats-section" style="background-color:white; color:white; padding:50px 20px; text-align:center;">
+  <div style="display:flex; justify-content:center; gap:40px; flex-wrap:wrap;">
+    <div style="background:#004a99; padding:30px; border-radius:500px; width:250px;">
+      <h2 style="font-size:40px; margin:0;">100%</h2>
+      <p style="margin:5px 0 0; font-size:18px;">Excellence</p>
+    </div>
+    <div style="background:#004a99; padding:30px; border-radius:500px; width:250px;">
+      <h2 style="font-size:40px; margin:0;">500+</h2>
+      <p style="margin:5px 0 0; font-size:18px;">Students</p>
+    </div>
+    <div style="background:#004a99; padding:30px; border-radius:500px; width:250px;">
+      <h2 style="font-size:40px; margin:0;">100%</h2>
+      <p style="margin:5px 0 0; font-size:18px;">Trust</p>
+    </div>
+  </div>
+</section>
+
+<!-- Photos Gallery Section -->
+<section style="padding:50px 20px; background-color:white; position:relative;">
+  <h2 style="text-align:center; color:#003580; font-size:35px; margin-bottom:30px;">School Gallery</h2>
+  
+  <!-- Left Arrow -->
+  <button id="gallery-prev" style="position:absolute; left:10px; top:55%; transform:translateY(-50%); background:#003580; color:white; border:none; font-size:30px; padding:10px; border-radius:50%; cursor:pointer; z-index:2;">&#10094;</button>
+  
+  <!-- Right Arrow -->
+  <button id="gallery-next" style="position:absolute; right:10px; top:55%; transform:translateY(-50%); background:#003580; color:white; border:none; font-size:30px; padding:10px; border-radius:50%; cursor:pointer; z-index:2;">&#10095;</button>
+  
+  <div id="gallery-container" style="display:flex; overflow-x:hidden; gap:20px; scroll-behavior:smooth;">
+    <img src="school.jpg" style="height:200px; border-radius:10px; flex-shrink:0;">
+    <img src="quality.jpg" style="height:200px; border-radius:10px; flex-shrink:0;">
+    <img src="bus.jpg" style="height:200px; border-radius:10px; flex-shrink:0;">
+    <img src="parent.jpg" style="height:200px; border-radius:10px; flex-shrink:0;">
+    <img src="kid.jpg" style="height:200px; border-radius:10px; flex-shrink:0;">
+    <img src="hw.jpg" style="height:200px; border-radius:10px; flex-shrink:0;">
+  </div>
+</section>
+
+<script>
+  const gallery = document.getElementById('gallery-container');
+  document.getElementById('gallery-next').addEventListener('click', () => {
+    gallery.scrollBy({ left: 300, behavior: 'smooth' });
+  });
+  document.getElementById('gallery-prev').addEventListener('click', () => {
+    gallery.scrollBy({ left: -300, behavior: 'smooth' });
+  });
+</script>
+
+<!-- Latest Events Section -->
+<section style="padding:50px 20px; background-color:#f9f9f9;">
+  <h2 style="text-align:center; color:#003580; font-size:35px; margin-bottom:40px;">Our Latest Events</h2>
+  <div style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap;">
+    <div style="background:white; padding:20px; width:300px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+      <img src="sports.jpg" style="width:100%; height:180px; object-fit:cover; border-radius:10px;">
+      <h3 style="margin:15px 0 10px;">Annual Sports Day</h3>
+      <p style="color:#555; font-size:14px;">A grand celebration of athletic talent and teamwork.</p>
+    </div>
+    <div style="background:white; padding:20px; width:300px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+      <img src="science.jpg" style="width:100%; height:180px; object-fit:cover; border-radius:10px;">
+      <h3 style="margin:15px 0 10px;">Science Exhibition</h3>
+      <p style="color:#555; font-size:14px;">Showcasing innovative projects from our brilliant students.</p>
+    </div>
+    <div style="background:white; padding:20px; width:300px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+      <img src="culture.jpg" style="width:100%; height:180px; object-fit:cover; border-radius:10px;">
+      <h3 style="margin:15px 0 10px;">Cultural Fest</h3>
+      <p style="color:#555; font-size:14px;">An evening of music, dance, and tradition.</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Reviews Section -->
+  <section class="reviews-section">
+    <h2>What Our Students Say</h2>
+    <div class="reviews-container">
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/men/11.jpg" alt="User 1">
+        <p>"Teachers here are super friendly and supportive!"</p>
+        <div class="reviewer">- Shirish Kadel.</div>
+      </div>
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/women/21.jpg" alt="User 2">
+        <p>"Environment of this School is super cool and fresh!"</p>
+        <div class="reviewer">- Sita K.</div>
+      </div>
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/men/31.jpg" alt="User 3">
+        <p>"ABC School is very forward in Extracurricular activities!"</p>
+        <div class="reviewer">- Prakash T.</div>
+      </div>
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/women/41.jpg" alt="User 4">
+        <p>"All necessary facilities for students is available here!"</p>
+        <div class="reviewer">- Anita S.</div>
+      </div>
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="User 5">
+        <p>"One of the best School in the town!"</p>
+        <div class="reviewer">- Dipesh R.</div>
+      </div>
+    </div>
+  </section>
+  <!-- Your Questions Answered Section -->
+<section class="questions-section" id="questions">
+  <div style="text-align:center; padding:60px 20px; background-color:#f9f9f9;">
+    <h2 style="color:#003580; font-size:28px; margin-bottom:40px;">Your Questions Answered</h2>
+    <div style="max-width:800px; margin:0 auto; text-align:left;">
+      <div style="margin-bottom:20px;">
+        <h3 style="font-size:18px; color:#222;">Q: How do I enroll my child in your school?</h3>
+        <p style="font-size:14px; color:#555;">A: To enroll, visit school and fill out the application form and submit the required documents. Our admissions team will guide you through the process.</p>
+      </div>
+      <div style="margin-bottom:20px;">
+        <h3 style="font-size:18px; color:#222;">Q: Are scholarships or financial aid available?</h3>
+        <p style="font-size:14px; color:#555;">A: Yes, scholarships and financial assistance are available based on academic performance and financial need. Please contact the school office for details.</p>
+      </div>
+      <div style="margin-bottom:20px;">
+        <h3 style="font-size:18px; color:#222;">Q: Do you have sports and extracurricular activities?</h3>
+        <p style="font-size:14px; color:#555;">A: Yes, we offer a variety of extracurricular activities including sports, music, arts, and clubs to encourage all-round development.
+
+</p>
+      </div>
+      <div style="text-align:center; margin-top:30px;">
+        <a href="#" id="show-faq" style="color:#ff6200; text-decoration:none; font-weight:bold;">Still have questions? Find answers in FAQ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section (Hidden Initially) -->
+<section class="faq-section" id="faq" style="display:none;">
+  <div style="padding:60px 20px; background-color:white;">
+    <h2 style="text-align:center; color:#003580; font-size:28px; margin-bottom:40px;">Frequently Asked Questions (FAQ)</h2>
+    <div style="max-width:800px; margin:0 auto; text-align:left;">
+      <div style="margin-bottom:20px;">
+        <h3 style="font-size:18px; color:#222;">Q: How do teachers communicate with parents?</h3>
+        <p style="font-size:14px; color:#555;">A: Teachers communicate through parent-teacher meetings, phone calls and home visit if necessary,</p>
+      </div>
+      <div style="margin-bottom:20px;">
+        <h3 style="font-size:18px; color:#222;">Q:  Is student safety ensured on school?</h3>
+        <p style="font-size:14px; color:#555;">A:  Yes, the campus has security measures, CCTV surveillance, and trained staff to ensure student safety at all times.</p>
+      </div>
+      <div style="margin-bottom:20px;">
+        <h3 style="font-size:18px; color:#222;">Q: Upto which level is taught here?</h3>
+        <p style="font-size:14px; color:#555;">A: We teach upto Grade 10 i.e. upto SEE here.</p>
+      </div>
+     
+  </div>
+</section>
+
+<!-- JavaScript to Show FAQ on Click -->
+<script>
+  document.getElementById("show-faq").addEventListener("click", function(e) {
+    e.preventDefault(); // Prevent default link behavior
+    const faqSection = document.getElementById("faq");
+    faqSection.style.display = "block"; // Show FAQ section
+    faqSection.scrollIntoView({ behavior: "smooth" }); // Scroll to FAQ
+  });
+</script>
+
+
+  <footer>
+    &copy; 2025 ABC Secondary School. All rights reserved.
+  </footer>
+
+</body>
+</html>

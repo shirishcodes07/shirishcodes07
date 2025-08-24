@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Our School</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Merriweather', serif;
+      margin: 0;
+      padding: 0;
+      background: #f9fbff;
+      color: #333;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Cinematic Hero Section */
+    .hero {
+      position: center;
+      width: 100%;
+      height: 70vh;
+      background: url('school.jpg') center/cover no-repeat fixed;
+      animation: zoom 20s ease-in-out infinite alternate;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.35); /* Dark overlay */
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 20%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .hero {
+      background: url('school.jpg') no-repeat center center/cover;
+      text-align: center;
+      padding: 80px 20px;
+      color: white;
+    }
+    .hero h2 {
+      font-size: 60px;
+      margin-bottom: 20px;
+      color: white;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+
+    .hero-text h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin: 0;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      margin-top: 15px;
+    }
+.hero {
+  background-image: url('school.jpg'); /* your image */
+  
+  background-position: center;
+  background-attachment: fixed;
+  height: 200px;
+  width: 1481px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+/* Overlay to reduce opacity */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6); /* darker overlay */
+  z-index: 0;
+}
+.hero * {
+  position: relative;
+  z-index: 1;
+}
+.hero h2, .hero p, .hero .cta-button {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: heroFadeZoom 1.5s forwards;
+}
+
+.hero h2 { animation-delay: 0.3s; }
+.hero p { animation-delay: 0.6s; }
+.hero .cta-button { animation-delay: 0.9s; }
+@keyframes heroFadeZoom {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+    
+
+    .container {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 20px;
+    }
+
+    /* Zig-zag sections */
+    .section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+    }
+
+    .section:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .section img {
+      width: 500px;
+      max-width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    .section .text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      color: #003580;
+      margin-bottom: 20px;
+      border-left: 6px solid #0074d9;
+      padding-left: 15px;
+    }
+
+    .section p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      text-align: justify;
+    }
+
+    /* Mission, Vision & Values Section */
+    .mvv-section {
+      margin: 60px 0;
+      text-align: center;
+    }
+
+    .mvv-section h2 {
+      font-size: 2rem;
+      color: #003580;
+      margin-bottom: 40px;
+    }
+
+    .mvv-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .mvv-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px 20px;
+      width: 300px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .mvv-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    }
+
+    .mvv-card img {
+      width: 60px;
+      margin-bottom: 15px;
+    }
+
+    .mvv-card h3 {
+      color: #0074d9;
+      margin-bottom: 15px;
+    }
+
+    .mvv-card p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Principal's Message Section */
+    .principal-section {
+      margin-top: 60px;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    .principal-section img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    .principal-section p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .principal-section p.quote {
+      font-style: italic;
+      color: #444;
+    }
+
+    .principal-section p.name {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #003580;
+    }
+
+    /* Bottom Gallery */
+    .image-row {
+      display: flex;
+      gap: 20px;
+      margin: 50px 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .image-row img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .image-row img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    footer {
+      background: #003580;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 60px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .section {
+        flex-direction: column !important;
+        text-align: center;
+      }
+
+      .section img {
+        margin-top: 20px;
+      }
+
+      .hero-text h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero-text p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-text">
+      <h1>Welcome to Our School</h1>
+      <p>Where Tradition Meets Modern Learning</p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- Welcome Section -->
+    <div class="section">
+      <div class="text">
+        <h2>Welcome to Our School</h2>
+        <p>
+          Our school has stood as a center of learning, growth, and excellence since its establishment, proudly serving as a second home for thousands of students over the years. We believe that education is not limited to books and classrooms, but extends to character, creativity, and compassion. Guided by dedicated teachers, modern facilities, and a nurturing environment, we strive to unlock the hidden potential of every child and prepare them to face the challenges of tomorrow with confidence.
+        </p>
+        <p>
+          We are committed to fostering not only academic achievement but also personal growth, leadership, and responsibility. Our diverse programs—ranging from science and technology to sports, music, arts, and cultural activities—offer students countless opportunities to discover their talents and passions. With a strong emphasis on discipline, innovation, and values, we aim to develop well-rounded individuals who excel in both knowledge and character.
+        </p>
+      </div>
+      <img src="teacher.jpg" alt="Classroom">
+    </div>
+
+    <!-- Facilities Section -->
+    <div class="section">
+      <div class="text">
+        <h2>Facilities & Infrastructure</h2>
+        <p>
+          The campus is equipped with modern classrooms, science and computer labs, a well-stocked library, sports grounds, music & art rooms, and a peaceful environment that fosters learning. We continuously upgrade our infrastructure to provide students with the best possible resources for academic and extracurricular growth.
+        </p>
+      </div>
+      <img src="bus.jpg" alt="Library">
+    </div>
+
+    <!-- Achievements Section -->
+    <div class="section">
+      <div class="text">
+        <h2>Achievements</h2>
+        <p>
+          Our students have excelled in national examinations, sports competitions, and cultural events. The school has proudly produced leaders, engineers, doctors, and innovators who contribute to society. Our achievements are a testament to the dedication of both our staff and students.
+        </p>
+      </div>
+      <img src="award.jpg" alt="Awards">
+    </div>
+
+    <!-- Mission, Vision & Values Section -->
+    <div class="mvv-section">
+      <h2>Our Mission, Vision & Values</h2>
+      <div class="mvv-cards">
+        <div class="mvv-card">
+          <img src="https://img.icons8.com/ios-filled/100/003580/target.png" alt="Mission Icon">
+          <h3>Mission</h3>
+          <p>
+            To provide holistic education that fosters intellectual, emotional, and physical growth, preparing students to thrive in a global society.
+          </p>
+        </div>
+
+        <div class="mvv-card">
+          <img src="https://img.icons8.com/ios-filled/100/0074d9/binoculars.png" alt="Vision Icon">
+          <h3>Vision</h3>
+          <p>
+            To become a leading institution recognized for excellence in academics, innovation, and shaping responsible citizens for tomorrow.
+          </p>
+        </div>
+
+        <div class="mvv-card">
+          <img src="https://img.icons8.com/ios-filled/100/005bbb/handshake.png" alt="Values Icon">
+          <h3>Values</h3>
+          <p>
+            Integrity, discipline, respect, compassion, and a commitment to continuous learning are at the core of everything we do.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Principal's Message Section -->
+    <div class="principal-section">
+      <img src="pr.jpg" alt="Principal">
+      <div>
+        <h2>Message from the Principal</h2>
+        <p class="quote">
+          “Education is not just about acquiring knowledge, but about nurturing curiosity, discipline, and values.  
+          At our school, we strive to create lifelong learners who will lead with compassion and confidence.”
+        </p>
+        <p class="name">– Mr. John Smith, Principal</p>
+      </div>
+    </div>
+
+
+
+  <footer>
+    &copy; 2025 Your School Name | All Rights Reserved
+  </footer>
+
+</body>
+</html>
